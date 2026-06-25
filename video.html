@@ -21,11 +21,19 @@ text-align:center;
 }
 
 header{
+display:flex;
+justify-content:space-between;
+align-items:center;
 padding:18px;
-font-size:28px;
+font-size:24px;
 font-weight:bold;
 background:linear-gradient(90deg,#6a00ff,#9b00ff);
 box-shadow:0 0 20px #8f00ff;
+}
+
+.settings{
+font-size:30px;
+cursor:pointer;
 }
 
 .status{
@@ -110,8 +118,13 @@ color:#888;
 
 <body>
 
-<header>🎥 Random Video Chat</header>
+<header class="topBar">
 
+<span>🎥 Random Video Chat</span>
+
+<div class="settings">⚙️</div>
+
+</header>
 <div class="status">
 🟢 Waiting for a stranger...
 </div>
