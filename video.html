@@ -242,7 +242,19 @@ alert(this.innerText);
 
 });
 };
+document.querySelector(".mic").onclick = function(){
 
+if(!stream) return;
+
+const audioTrack = stream.getAudioTracks()[0];
+
+if(!audioTrack) return;
+
+audioTrack.enabled = !audioTrack.enabled;
+
+this.innerHTML = audioTrack.enabled ? "🎤" : "🔇";
+
+};
 </script>
 
 </body>
