@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Random Video Chat</title>
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Arial,sans-serif;
+}
+
+body{
+background:#090909;
+color:white;
+text-align:center;
+}
+
+header{
+padding:18px;
+font-size:28px;
+font-weight:bold;
+background:linear-gradient(90deg,#6a00ff,#9b00ff);
+box-shadow:0 0 20px #8f00ff;
+}
+
+.status{
+margin-top:15px;
+font-size:18px;
+color:#00ff88;
+font-weight:bold;
+}
+
+.videoBox{
+width:92%;
+height:300px;
+margin:20px auto;
+border-radius:20px;
+background:#1b1b1b;
+display:flex;
+align-items:center;
+justify-content:center;
+font-size:22px;
+border:3px solid #7d00ff;
+box-shadow:0 0 20px #7d00ff;
+}
+
+.controls{
+display:flex;
+flex-wrap:wrap;
+justify-content:center;
+gap:15px;
+margin-top:20px;
+}
+.btn{
+width:160px;
+padding:15px;
+border:none;
+border-radius:15px;
+font-size:18px;
+font-weight:bold;
+color:white;
+cursor:pointer;
+transition:.3s;
+}
+
+.find{
+background:#00c853;
+}
+
+.next{
+background:#ff9800;
+}
+
+.end{
+background:#f44336;
+}
+
+.btn:active{
+transform:scale(.95);
+}
+
+.bottom{
+margin-top:25px;
+display:flex;
+justify-content:center;
+gap:20px;
+font-size:32px;
+}
+
+.icon{
+background:#222;
+padding:15px;
+border-radius:50%;
+border:2px solid #7d00ff;
+}
+
+footer{
+margin-top:30px;
+padding:20px;
+color:#888;
+}
+
+</style>
+</head>
+
+<body>
+
+<header>🎥 Random Video Chat</header>
+
+<div class="status">
+🟢 Waiting for a stranger...
+</div>
+
+<div class="videoBox">
+📹 Camera Preview
+</div>
+
+<div class="controls">
+  <button class="btn find">🎲 Find Stranger</button>
+
+<button class="btn next">⏭ Next</button>
+
+<button class="btn end">❌ End Chat</button>
+
+</div>
+
+<div class="bottom">
+
+<div class="icon">🎤</div>
+
+<div class="icon">📷</div>
+
+<div class="icon">🌍</div>
+
+<div class="icon">⚙️</div>
+
+</div>
+
+<footer>
+
+Rehan Connect © 2026
+
+</footer>
+
+<script>
+
+document.querySelector(".find").onclick=function(){
+
+alert("Searching for a stranger...");
+
+}
+
+document.querySelector(".next").onclick=function(){
+
+alert("Finding next stranger...");
+
+}
+
+document.querySelector(".end").onclick=function(){
+
+window.location.href="index.html";
+
+}
+
+</script>
+</body>
+</html>
