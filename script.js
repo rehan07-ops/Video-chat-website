@@ -1,3 +1,4 @@
+alert("Script Loaded");
 document.querySelector(".video").onclick = function () {
     window.location.href = "index1.html";
 };
