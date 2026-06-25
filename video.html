@@ -227,19 +227,7 @@ window.location.href="index.html";
 };
 
 document.querySelector(".settings").onclick = function(){
-document.querySelector(".mic").onclick = function(){
 
-if(!stream) return;
-
-const audioTrack = stream.getAudioTracks()[0];
-
-if(!audioTrack) return;
-
-audioTrack.enabled = !audioTrack.enabled;
-
-this.innerHTML = audioTrack.enabled ? "🎤" : "🔇";
-
-};
 const menu = document.getElementById("settingsMenu");
 
 menu.style.display =
