@@ -118,6 +118,13 @@ color:#888;
 
 <body>
 
+<header class="topBar">
+    <span>🎥 Random Video Chat</span>
+    <div class="settings">⚙️</div>
+</header>
+
+<div id="settingsMenu"
+
 
 <div id="settingsMenu" style="
 display:none;
@@ -238,7 +245,7 @@ videoTrack.enabled = !videoTrack.enabled;
 this.innerHTML = videoTrack.enabled ? "📷" : "🚫";
 
 };
-document.querySelector(".settings").onclick = function(){
+
 
 const menu = document.getElementById("settingsMenu");
 
@@ -253,8 +260,8 @@ menu.style.display = "none";
 }
 
 };
-document.querySelector(".settings").onclick = function(){
 
+document.querySelector(".settings").onclick = function(){
 const menu = document.getElementById("settingsMenu");
 
 menu.style.display =
