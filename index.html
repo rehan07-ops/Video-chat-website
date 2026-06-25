@@ -72,3 +72,104 @@ box-shadow:0 0 15px rgba(255,255,255,.1);
 .btn:hover{
 transform:scale(1.05);
 }
+.video{
+background:linear-gradient(90deg,#ff512f,#ff1744);
+}
+
+.chat{
+background:linear-gradient(90deg,#00b894,#00cec9);
+}
+
+.date{
+background:linear-gradient(90deg,#ff2d55,#ff6b81);
+}
+
+.login{
+background:linear-gradient(90deg,#007aff,#00c6ff);
+}
+
+.btn:active{
+transform:scale(.96);
+}
+
+footer{
+text-align:center;
+padding:30px;
+color:#888;
+font-size:14px;
+}
+
+</style>
+</head>
+
+<body>
+
+<header>Rehan Connect</header>
+
+<section class="hero">
+
+<h2>Meet New People 🌍</h2>
+
+<p>Random Video Chat • Chat Room • Dating • Login</p>
+
+</section>
+
+<div class="menu">
+
+<button class="btn video"
+onclick="location.href='video.html'">
+
+🎥 Random Video Chat
+
+</button>
+
+<button class="btn chat"
+onclick="location.href='chat.html'">
+
+💬 Chat Room
+
+</button>
+<button class="btn date"
+onclick="location.href='dating.html'">
+
+❤️ Dating
+
+</button>
+
+<button class="btn login"
+onclick="location.href='login.html'">
+
+👤 Login
+
+</button>
+
+</div>
+
+<footer>
+
+© 2026 Rehan Connect<br>
+Made with ❤️ by Rehan
+
+</footer>
+
+<script>
+
+document.querySelectorAll(".btn").forEach(btn=>{
+
+btn.addEventListener("mouseenter",()=>{
+
+btn.style.boxShadow="0 0 25px #9b00ff";
+
+});
+
+btn.addEventListener("mouseleave",()=>{
+
+btn.style.boxShadow="0 0 15px rgba(255,255,255,.1)";
+
+});
+
+});
+
+  </script>
+  </body>
+</html>
