@@ -19,7 +19,6 @@ background:#090909;
 color:white;
 text-align:center;
 }
-
 header{
 display:flex;
 justify-content:space-between;
@@ -50,21 +49,25 @@ border-bottom:1px solid #333;
 }
 
 .status{
-margin:15px;
-color:#00ff88;
-font-weight:bold;
+margin-top:15px;
 font-size:18px;
+font-weight:bold;
+color:#00ff88;
 }
 
 .live{
+margin-top:8px;
+color:red;
+font-weight:bold;
+}
+
 .videoBox{
 width:95%;
 height:60vh;
+margin:20px auto;
 background:black;
-margin:15px auto;
 border-radius:20px;
 border:3px solid #7d00ff;
-box-shadow:0 0 20px #7d00ff;
 object-fit:cover;
 }
 
@@ -72,16 +75,16 @@ object-fit:cover;
 display:flex;
 justify-content:center;
 gap:12px;
-margin-top:20px;
 flex-wrap:wrap;
+margin-top:20px;
 }
 
 .btn{
 padding:15px 18px;
 border:none;
 border-radius:12px;
-color:white;
 font-size:17px;
+color:white;
 cursor:pointer;
 }
 
@@ -104,16 +107,11 @@ border:2px solid #7d00ff;
 font-size:28px;
 cursor:pointer;
 }
-color:red;
-font-weight:bold;
-margin-bottom:10px;
-}
-
 </style>
+
 </head>
 
 <body>
-
 <header>
 
 <span>🎥 Rehan Connect</span>
@@ -122,26 +120,32 @@ margin-bottom:10px;
 
 </header>
 
-<div id="settingsMenu">
+<div id="settingsMenu" style="display:none;">
 
 <div>👤 Profile</div>
+
 <div>🌍 Country Filter</div>
+
 <div>🌐 Language</div>
+
 <div>🌙 Dark Mode</div>
+
 <div>🔔 Notifications</div>
+
 <div>🚪 Logout</div>
 
 </div>
 
 <div class="status">
+
 🟢 Waiting for a stranger...
+
 </div>
 
 <div class="live">
+
 🔴 LIVE
-</div>
-<div class="live">
-🔴 LIVE
+
 </div>
 <video
 id="localVideo"
@@ -176,9 +180,8 @@ class="videoBox">
 <div class="icon flip">🔄</div>
 
 </div>
-<footer>
-Rehan Connect © 2026
-</footer>
+
+
 <script>
 
 let stream = null;
@@ -199,7 +202,7 @@ document.querySelector(".status").innerHTML =
 
 }catch(e){
 
-alert("Camera permission denied.");
+alert("Camera permission denied!");
 
 }
 
