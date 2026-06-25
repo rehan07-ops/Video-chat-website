@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Rehan Connect Login</title>
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Arial,sans-serif;
+}
+
+body{
+background:#0d0d0d;
+display:flex;
+justify-content:center;
+align-items:center;
+height:100vh;
+color:white;
+}
+
+.card{
+width:90%;
+max-width:360px;
+background:#1b1b1b;
+padding:30px;
+border-radius:20px;
+box-shadow:0 0 25px rgba(125,0,255,.5);
+}
+
+h1{
+text-align:center;
+margin-bottom:25px;
+}
+
+input{
+width:100%;
+padding:15px;
+margin:10px 0;
+border:none;
+border-radius:12px;
+font-size:16px;
+outline:none;
+}
+
+button{
+width:100%;
+padding:15px;
+margin-top:15px;
+border:none;
+border-radius:12px;
+font-size:18px;
+font-weight:bold;
+background:#7d00ff;
+color:white;
+cursor:pointer;
+}
+
+button:active{
+transform:scale(.97);
+}
+a{
+color:#9b59ff;
+text-decoration:none;
+}
+
+p{
+text-align:center;
+margin-top:20px;
+color:#bbb;
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="card">
+
+<h1>👤 Login</h1>
+
+<input
+type="email"
+id="email"
+placeholder="Email">
+
+<input
+type="password"
+id="password"
+placeholder="Password">
+
+<button id="loginBtn">
+Login
+</button>
+
+<p>
+
+Don't have an account?<br>
+
+<a href="#">Create Account</a>
+
+</p>
+
+</div>
+<script>
+
+document.getElementById("loginBtn").onclick = function(){
+
+const email = document.getElementById("email").value.trim();
+
+const password = document.getElementById("password").value.trim();
+
+if(email==="" || password===""){
+
+alert("Please enter your email and password.");
+
+return;
+
+}
+
+alert("Welcome to Rehan Connect, " + email + "!");
+
+// Later we'll replace this with a real login system.
+
+window.location.href="index.html";
+
+};
+
+</script>
+</body>
+</html>
