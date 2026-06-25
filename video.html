@@ -116,9 +116,13 @@ color:#888;
 🟢 Waiting for a stranger...
 </div>
 
-<div class="videoBox">
-📹 Camera Preview
-</div>
+<video
+id="localVideo"
+autoplay
+playsinline
+muted
+class="videoBox">
+</video>
 
 <div class="controls">
   <button class="btn find">🎲 Find Stranger</button>
@@ -149,11 +153,27 @@ Rehan Connect © 2026
 
 <script>
 
-document.querySelector(".find").onclick=function(){
+document.querySelector(".find").onclick = async function () {
 
-alert("Searching for a stranger...");
+try{
+
+const stream = await navigator.mediaDevices.getUserMedia({
+video:true,
+audio:true
+});
+
+document.getElementById("localVideo").srcObject = stream;
+
+document.querySelector(".status").innerHTML =
+"🟢 Camera Connected";
+
+}catch(e){
+
+alert("Camera permission denied.");
 
 }
+
+};
 
 document.querySelector(".next").onclick=function(){
 
