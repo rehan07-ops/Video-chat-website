@@ -125,6 +125,27 @@ color:#888;
 <div class="settings">⚙️</div>
 
 </header>
+<div id="settingsMenu" style="
+display:none;
+background:#1c1c1c;
+padding:15px;
+border-bottom:2px solid #7d00ff;
+text-align:left;
+">
+
+<div style="padding:10px;">👤 Profile</div>
+
+<div style="padding:10px;">🌍 Country Filter</div>
+
+<div style="padding:10px;">🌐 Language</div>
+
+<div style="padding:10px;">🌙 Dark Mode</div>
+
+<div style="padding:10px;">🔔 Notifications</div>
+
+<div style="padding:10px;">🚪 Logout</div>
+
+</div>
 <div class="status">
 🟢 Waiting for a stranger...
 </div>
@@ -221,6 +242,21 @@ const videoTrack = stream.getVideoTracks()[0];
 videoTrack.enabled = !videoTrack.enabled;
 
 this.innerHTML = videoTrack.enabled ? "📷" : "🚫";
+
+};
+document.querySelector(".settings").onclick = function(){
+
+const menu = document.getElementById("settingsMenu");
+
+if(menu.style.display === "none"){
+
+menu.style.display = "block";
+
+}else{
+
+menu.style.display = "none";
+
+}
 
 };
 </script>
