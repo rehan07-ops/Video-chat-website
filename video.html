@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Random Video Chat</title>
+<title>Rehan Connect - Video Chat</title>
 
 <style>
 
@@ -25,79 +25,75 @@ display:flex;
 justify-content:space-between;
 align-items:center;
 padding:18px;
+background:linear-gradient(90deg,#6a00ff,#9b00ff);
 font-size:24px;
 font-weight:bold;
-background:linear-gradient(90deg,#6a00ff,#9b00ff);
 box-shadow:0 0 20px #8f00ff;
 }
 
 .settings{
-font-size:30px;
+font-size:28px;
 cursor:pointer;
 }
 
-.status{
-margin-top:15px;
-font-size:18px;
-color:#00ff88;
-font-weight:bold;
+#settingsMenu{
+display:none;
+background:#1b1b1b;
+text-align:left;
+padding:15px;
+border-bottom:2px solid #7d00ff;
 }
 
+#settingsMenu div{
+padding:12px;
+border-bottom:1px solid #333;
+}
+
+.status{
+margin:15px;
+color:#00ff88;
+font-weight:bold;
+font-size:18px;
+}
+
+.live{
 .videoBox{
-width:92%;
-height:300px;
-margin:20px auto;
+width:95%;
+height:60vh;
+background:black;
+margin:15px auto;
 border-radius:20px;
-background:#1b1b1b;
-display:flex;
-align-items:center;
-justify-content:center;
-font-size:22px;
 border:3px solid #7d00ff;
 box-shadow:0 0 20px #7d00ff;
+object-fit:cover;
 }
 
 .controls{
 display:flex;
-flex-wrap:wrap;
 justify-content:center;
-gap:15px;
+gap:12px;
 margin-top:20px;
+flex-wrap:wrap;
 }
+
 .btn{
-width:160px;
-padding:15px;
+padding:15px 18px;
 border:none;
-border-radius:15px;
-font-size:18px;
-font-weight:bold;
+border-radius:12px;
 color:white;
+font-size:17px;
 cursor:pointer;
-transition:.3s;
 }
 
-.find{
-background:#00c853;
-}
-
-.next{
-background:#ff9800;
-}
-
-.end{
-background:#f44336;
-}
-
-.btn:active{
-transform:scale(.95);
-}
+.find{background:#00c853;}
+.next{background:#ff9800;}
+.end{background:#f44336;}
 
 .bottom{
-margin-top:25px;
 display:flex;
 justify-content:center;
 gap:20px;
-font-size:32px;
+margin:25px;
 }
 
 .icon{
@@ -105,12 +101,12 @@ background:#222;
 padding:15px;
 border-radius:50%;
 border:2px solid #7d00ff;
+font-size:28px;
+cursor:pointer;
 }
-
-footer{
-margin-top:30px;
-padding:20px;
-color:#888;
+color:red;
+font-weight:bold;
+margin-bottom:10px;
 }
 
 </style>
@@ -118,39 +114,33 @@ color:#888;
 
 <body>
 
-<header class="topBar">
-    <span>🎥 Random Video Chat</span>
-    <div class="settings">⚙️</div>
+<header>
+
+<span>🎥 Rehan Connect</span>
+
+<div class="settings">⚙️</div>
+
 </header>
 
-<div id="settingsMenu"
+<div id="settingsMenu">
 
-
-<div id="settingsMenu" style="
-display:none;
-background:#1c1c1c;
-padding:15px;
-border-bottom:2px solid #7d00ff;
-text-align:left;
-">
-
-<div style="padding:10px;">👤 Profile</div>
-
-<div style="padding:10px;">🌍 Country Filter</div>
-
-<div style="padding:10px;">🌐 Language</div>
-
-<div style="padding:10px;">🌙 Dark Mode</div>
-
-<div style="padding:10px;">🔔 Notifications</div>
-
-<div style="padding:10px;">🚪 Logout</div>
+<div>👤 Profile</div>
+<div>🌍 Country Filter</div>
+<div>🌐 Language</div>
+<div>🌙 Dark Mode</div>
+<div>🔔 Notifications</div>
+<div>🚪 Logout</div>
 
 </div>
+
 <div class="status">
 🟢 Waiting for a stranger...
 </div>
-<div style="color:red;font-weight:bold;margin:10px;">
+
+<div class="live">
+🔴 LIVE
+</div>
+<div class="live">
 🔴 LIVE
 </div>
 <video
@@ -162,11 +152,18 @@ class="videoBox">
 </video>
 
 <div class="controls">
-  <button class="btn find">🎲 Find Stranger</button>
 
-<button class="btn next">⏭ Next</button>
+<button class="btn find">
+🎲 Find Stranger
+</button>
 
-<button class="btn end">❌ End Chat</button>
+<button class="btn next">
+⏭ Next
+</button>
+
+<button class="btn end">
+❌ End Chat
+</button>
 
 </div>
 
@@ -176,16 +173,19 @@ class="videoBox">
 
 <div class="icon camera">📷</div>
 
-<div class="icon">🌍</div>
+<div class="icon flip">🔄</div>
 
 </div>
-
+<footer>
+Rehan Connect © 2026
+</footer>
 <script>
-  let stream = null;
 
-document.querySelector(".find").onclick = async function () {
+let stream = null;
 
-try {
+document.querySelector(".find").onclick = async function(){
+
+try{
 
 stream = await navigator.mediaDevices.getUserMedia({
 video:true,
@@ -197,7 +197,7 @@ document.getElementById("localVideo").srcObject = stream;
 document.querySelector(".status").innerHTML =
 "🟢 Camera Connected";
 
-} catch(e) {
+}catch(e){
 
 alert("Camera permission denied.");
 
@@ -215,59 +215,23 @@ document.querySelector(".end").onclick = function(){
 
 if(stream){
 
-stream.getTracks().forEach(track => track.stop());
+stream.getTracks().forEach(track=>track.stop());
 
 }
 
 window.location.href="index.html";
 
 };
-document.querySelector(".mic").onclick = function(){
-
-if(!stream) return;
-
-const audioTrack = stream.getAudioTracks()[0];
-
-audioTrack.enabled = !audioTrack.enabled;
-
-this.innerHTML = audioTrack.enabled ? "🎤" : "🔇";
-
-};
-
-document.querySelector(".camera").onclick = function(){
-
-if(!stream) return;
-
-const videoTrack = stream.getVideoTracks()[0];
-
-videoTrack.enabled = !videoTrack.enabled;
-
-this.innerHTML = videoTrack.enabled ? "📷" : "🚫";
-
-};
-
-
-const menu = document.getElementById("settingsMenu");
-
-if(menu.style.display === "none"){
-
-menu.style.display = "block";
-
-}else{
-
-menu.style.display = "none";
-
-}
-
-};
 
 document.querySelector(".settings").onclick = function(){
+
 const menu = document.getElementById("settingsMenu");
 
 menu.style.display =
 menu.style.display=="block" ? "none" : "block";
 
 };
+
 </script>
 
 </body>
