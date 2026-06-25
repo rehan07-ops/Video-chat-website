@@ -12,4 +12,5 @@ document.querySelector(".nearby").onclick = function () {
 
 document.querySelector(".login").onclick = function () {
     alert("Login page coming soon!");
+};
 
