@@ -115,7 +115,9 @@ color:#888;
 <div class="status">
 🟢 Waiting for a stranger...
 </div>
-
+<div style="color:red;font-weight:bold;margin:10px;">
+🔴 LIVE
+</div>
 <video
 id="localVideo"
 autoplay
@@ -142,22 +144,15 @@ class="videoBox">
 <div class="icon">🌍</div>
 
 <div class="icon">⚙️</div>
-
-</div>
-
-<footer>
-
-Rehan Connect © 2026
-
-</footer>
-
 <script>
+
+let stream = null;
 
 document.querySelector(".find").onclick = async function () {
 
-try{
+try {
 
-const stream = await navigator.mediaDevices.getUserMedia({
+stream = await navigator.mediaDevices.getUserMedia({
 video:true,
 audio:true
 });
@@ -167,7 +162,7 @@ document.getElementById("localVideo").srcObject = stream;
 document.querySelector(".status").innerHTML =
 "🟢 Camera Connected";
 
-}catch(e){
+} catch(e) {
 
 alert("Camera permission denied.");
 
@@ -175,18 +170,25 @@ alert("Camera permission denied.");
 
 };
 
-document.querySelector(".next").onclick=function(){
+document.querySelector(".next").onclick = function(){
 
-alert("Finding next stranger...");
+alert("Searching for another stranger...");
+
+};
+
+document.querySelector(".end").onclick = function(){
+
+if(stream){
+
+stream.getTracks().forEach(track => track.stop());
 
 }
-
-document.querySelector(".end").onclick=function(){
 
 window.location.href="index.html";
 
-}
+};
 
 </script>
+
 </body>
 </html>
