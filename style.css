@@ -1,1 +1,69 @@
-b
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@500;600&display=swap');
+
+:root {
+    --primary: #6a00ff;
+    --primary-light: #9b00ff;
+    --accent: #00ff9d;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', system-ui, sans-serif;
+    background: linear-gradient(135deg, #0a0a0a, #1a0033);
+    color: #fff;
+    min-height: 100vh;
+    overflow-x: hidden;
+}
+
+.header {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    height: 70px;
+    background: rgba(10,10,20,0.95);
+    backdrop-filter: blur(20px);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 25px;
+    z-index: 1000;
+    border-bottom: 1px solid rgba(106,0,255,0.2);
+}
+
+.logo {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 26px;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.btn {
+    padding: 12px 28px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.3s;
+}
+
+.btn.primary {
+    background: linear-gradient(90deg, var(--primary), var(--primary-light));
+    color: white;
+}
+
+.btn.secondary {
+    background: transparent;
+    border: 2px solid rgba(155,0,255,0.6);
+    color: white;
+}
+
+.glass {
+    background: rgba(255,255,255,0.08);
+    backdrop-filter: blur(20px);
+    border: 1px solid rgba(106,0,255,0.3);
+}
