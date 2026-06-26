@@ -1,1 +1,52 @@
-u
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Sign Up - Rehan Connect</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body style="display:flex; align-items:center; justify-content:center; min-height:100vh; background:linear-gradient(135deg, #0a0a0a, #1a0033);">
+    
+    <div class="glass" style="padding:50px 40px; width:100%; max-width:420px; border-radius:24px; text-align:center;">
+        
+        <div class="logo" style="font-size:42px; margin-bottom:20px; justify-content:center; display:flex; align-items:center; gap:10px;">
+            🎥 Rehan Connect
+        </div>
+        
+        <h2 style="margin-bottom:30px;">Create Account</h2>
+        
+        <input type="text" id="username" placeholder="Username" style="width:100%; padding:16px; margin:12px 0; background:rgba(255,255,255,0.1); border:1px solid rgba(155,0,255,0.4); border-radius:12px; color:white; font-size:16px;">
+        
+        <input type="email" id="email" placeholder="Email Address" style="width:100%; padding:16px; margin:12px 0; background:rgba(255,255,255,0.1); border:1px solid rgba(155,0,255,0.4); border-radius:12px; color:white; font-size:16px;">
+        
+        <input type="password" id="password" placeholder="Password" style="width:100%; padding:16px; margin:12px 0; background:rgba(255,255,255,0.1); border:1px solid rgba(155,0,255,0.4); border-radius:12px; color:white; font-size:16px;">
+        
+        <button onclick="signup()" class="btn primary" style="width:100%; padding:16px; margin-top:25px; font-size:1.1rem;">
+            Create Account
+        </button>
+        
+        <p style="margin-top:25px; color:#aaa;">
+            Already have an account? 
+            <a href="login.html" style="color:var(--primary-light);">Login</a>
+        </p>
+        
+        <a href="index.html" style="color:#777; display:block; margin-top:30px;">← Back to Home</a>
+    </div>
+
+    <script src="script.js"></script>
+    <script>
+        function signup() {
+            const username = document.getElementById('username').value.trim();
+            if (username === "") {
+                showToast("Please enter a username");
+                return;
+            }
+            showToast(`🎉 Welcome, ${username}! Account created successfully.`);
+            setTimeout(() => {
+                window.location.href = "video.html";
+            }, 1200);
+        }
+    </script>
+</body>
+</html>
