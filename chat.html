@@ -1,1 +1,108 @@
-<
+<<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Chat - Rehan Connect</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .chat-container {
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            background: #0a0a0a;
+        }
+        .chat-header {
+            padding: 15px 20px;
+            background: rgba(10,10,20,0.98);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            border-bottom: 1px solid rgba(106,0,255,0.2);
+        }
+        .chat-area {
+            flex: 1;
+            padding: 20px;
+            overflow-y: auto;
+            background: #111;
+        }
+        .message {
+            margin: 12px 0;
+            padding: 14px 20px;
+            border-radius: 20px;
+            max-width: 80%;
+            font-size: 15.5px;
+        }
+        .my-msg {
+            background: linear-gradient(90deg, var(--primary), var(--primary-light));
+            margin-left: auto;
+            border-bottom-right-radius: 6px;
+        }
+        .other-msg {
+            background: rgba(255,255,255,0.1);
+            border-bottom-left-radius: 6px;
+        }
+        .input-area {
+            padding: 15px 20px;
+            background: rgba(10,10,20,0.98);
+            display: flex;
+            gap: 12px;
+            border-top: 1px solid rgba(106,0,255,0.2);
+        }
+        .input-area input {
+            flex: 1;
+            padding: 16px 22px;
+            border-radius: 50px;
+            background: rgba(255,255,255,0.08);
+            border: 1px solid rgba(155,0,255,0.4);
+            color: white;
+            font-size: 16px;
+        }
+    </style>
+</head>
+<body>
+    <div class="chat-container">
+        <div class="chat-header">
+            <div class="logo" style="font-size:24px;">
+                💬 Random Chat
+            </div>
+            <a href="video.html" class="btn primary" style="padding:10px 24px;">Switch to Video</a>
+        </div>
+        
+        <div class="chat-area" id="chatArea">
+            <div class="message other-msg">👋 Hey! How are you today?</div>
+        </div>
+        
+        <div class="input-area">
+            <input type="text" id="chatInput" placeholder="Type a message..." onkeypress="if(event.key==='Enter') sendMessage()">
+            <button onclick="sendMessage()" class="btn primary" style="padding:0 28px;">Send</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+    <script>
+        function sendMessage() {
+            const input = document.getElementById('chatInput');
+            const area = document.getElementById('chatArea');
+            if (!input.value.trim()) return;
+            
+            const msg = document.createElement('div');
+            msg.className = 'message my-msg';
+            msg.textContent = input.value;
+            area.appendChild(msg);
+            area.scrollTop = area.scrollHeight;
+            
+            input.value = '';
+            
+            // Auto reply simulation
+            setTimeout(() => {
+                const reply = document.createElement('div');
+                reply.className = 'message other-msg';
+                reply.textContent = "That's awesome! 😊 Where are you from?";
+                area.appendChild(reply);
+                area.scrollTop = area.scrollHeight;
+            }, 900);
+        }
+    </script>
+</body>
+</html>
