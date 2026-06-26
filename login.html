@@ -1,1 +1,22 @@
-<
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - Rehan Connect</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body style="display:flex;align-items:center;justify-content:center;min-height:100vh;background:linear-gradient(135deg,#0a0a0a,#1a0033);">
+    <div class="glass" style="padding:50px 40px;width:100%;max-width:420px;border-radius:24px;text-align:center;">
+        <div class="logo" style="font-size:42px;justify-content:center;margin-bottom:20px;">🎥 Rehan Connect</div>
+        <h2>Welcome Back</h2>
+        <input type="text" placeholder="Username or Email" style="width:100%;padding:16px;margin:12px 0;background:rgba(255,255,255,0.1);border:1px solid rgba(155,0,255,0.4);border-radius:12px;color:white;">
+        <input type="password" placeholder="Password" style="width:100%;padding:16px;margin:12px 0;background:rgba(255,255,255,0.1);border:1px solid rgba(155,0,255,0.4);border-radius:12px;color:white;">
+        <button onclick="login()" class="btn primary" style="width:100%;padding:16px;margin-top:20px;font-size:1.1rem;">Login</button>
+        <p style="margin-top:25px;color:#aaa;">Don't have account? <a href="signup.html" style="color:var(--primary-light)">Sign up</a></p>
+        <a href="index.html" style="color:#777;display:block;margin-top:30px;">← Back</a>
+    </div>
+    <script src="script.js"></script>
+    <script>function login(){showToast("✅ Logged in!");setTimeout(()=>location.href="video.html",800);}</script>
+</body>
+</html>
